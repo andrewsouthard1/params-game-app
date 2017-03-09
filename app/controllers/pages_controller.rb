@@ -10,7 +10,9 @@ class PagesController < ApplicationController
   def guess_num(num)
     @number = params["number"].to_i
     @game_line =
-      if num > @number
+      if @number < 1 || @number > 100
+        "Invalid choice"
+      elsif num > @number
         "Your guess is too low."
       elsif num < @number
         "Your guess is too high."
@@ -23,6 +25,19 @@ class PagesController < ApplicationController
     render 'button_click.html.erb'
   end
 
+  def url_segment_parameter_method
+    guess_num(63)
+    render 'url_seg_parm_view.html.erb'
+  end
+
+  def form_game
+    render 'form_game.html.erb'
+  end
+
+  def form_submit
+    guess_num(35)
+    render 'form_submit.html.erb'
+  end
 end
 
 

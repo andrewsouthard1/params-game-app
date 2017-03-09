@@ -1,0 +1,9 @@
+<label for= "guess"><h1>Guess a number</h1></label>
+<%= form_tag("/submit", method: "post") do %>
+  <div>
+    <input type="text" name="number" id="guess">
+  </div>
+  <div>
+    <input type="submit" name="submit">
+  </div>  
+<% end %>
